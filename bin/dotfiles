@@ -26,7 +26,6 @@ source ./lib/download
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
-source ./lib/npm
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -112,6 +111,8 @@ else
     printf "Updating packages...\n"
     # Install Homebrew formulae
     run_brew
+    # Install Node packages
+    run_node
 
     # Show list of additional AppStore Software
     run_additional
@@ -169,10 +170,3 @@ if is_confirmed; then
 else
     printf "Skipped OS X settings update.\n"
 fi
-
-# Install Node packages
-run_node
-
-printf "To install the latest node version run dotfiles -n"
-
-reload

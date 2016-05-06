@@ -3,4 +3,21 @@
 run_node() {
 	# install nvm
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+
+	# source nvm
+	. ~/.nvm/nvm.sh
+
+	# install latest node version
+	nvm install node
+
+	# tell nvm to use latest node version
+	nvm use node
+
+	# update npm
+	npm install -g npm
+
+	npm i -g standard browser-sync http-server json
+
+	# install npm tab completion
+	npm completion > /usr/local/etc/bash_completion.d/npm
 }
