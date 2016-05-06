@@ -7,6 +7,8 @@ run_node() {
 	# install latest node version
 	nvm install node
 
+	reload
+
 	# tell nvm to use latest node version
 	nvm use node
 

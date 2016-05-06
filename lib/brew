@@ -30,7 +30,6 @@ run_brew() {
             'ffmpeg'
             'graphicsmagick'
             'wget'
-            'ansible'
             'ssh-copy-id'
         )
 

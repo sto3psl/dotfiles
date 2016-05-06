@@ -69,7 +69,6 @@ Homebrew formulae:
 * [graphicsmagick](http://www.graphicsmagick.org/)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
 * [wget](http://www.gnu.org/software/wget/)
-* [ansible](http://ansible.com)
 * [hub](https://github.com/github/hub)
 
 Also newer versions of `grep`, `screen` and `openssh`.
@@ -77,14 +76,12 @@ Also newer versions of `grep`, `screen` and `openssh`.
 
 Node packages (globally):
 
-* [nave](https://github.com/isaacs/nave)
 * [standard](http://standardjs.com)
-* [couchsurfer](https://github.com/klaemo/couchsurfer)
-* [create-module](https://github.com/finnp/create-module)
+* [browser-sync](https://www.npmjs.com/package/browser-sync)
 * [http-server](https://www.npmjs.com/package/http-server)
 * [json](http://trentm.com/json)
 
-It also installs the latest `node` with nave and sets it as the default `node`.
+It also installs the latest `node` with nvm and sets it as the default `node`.
 
 ### Custom OS X defaults
 
