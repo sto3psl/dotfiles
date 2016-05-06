@@ -1,15 +1,13 @@
-# Clemens' Dotfiles
+# Fabians Dotfiles
 
-My OS X dotfiles. Originally forked from [mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles), later incorporated parts of [necolas/dotfiles](https://github.com/necolas/dotfiles).
-
-![](https://files.klaemo.me/images/terminal.png)
+My OS X dotfiles. Originally forked from [klaemo/dotfiles](https://github.com/klaemo/dotfiles).
 
 ## How to install
 
 The installation step may overwrite existing dotfiles in your HOME directory.
 
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/klaemo/dotfiles/master/bin/dotfiles)"
+$ bash -c "$(curl -fsSL raw.github.com/sto3psl/dotfiles/master/bin/dotfiles)"
 ```
 
 N.B. If you wish to fork this project and maintain your own dotfiles, you must
@@ -65,14 +63,11 @@ Homebrew formulae:
 
 * GNU core utilities
 * [git](http://git-scm.com/)
-* [ack](http://betterthangrep.com/)
 * bash (latest version)
 * [bash-completion](http://bash-completion.alioth.debian.org/)
 * [ffmpeg](http://ffmpeg.org/)
 * [graphicsmagick](http://www.graphicsmagick.org/)
-* [node](http://nodejs.org/)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
-* [tree](http://mama.indstate.edu/users/ice/tree/)
 * [wget](http://www.gnu.org/software/wget/)
 * [ansible](http://ansible.com)
 * [hub](https://github.com/github/hub)
@@ -150,8 +145,8 @@ export PATH
 # Git credentials
 # Not under version control to prevent people from
 # accidentally committing with your details
-GIT_AUTHOR_NAME="Clemens Stolle"
-GIT_AUTHOR_EMAIL="clemens@example.com"
+GIT_AUTHOR_NAME="Fabian Gündel"
+GIT_AUTHOR_EMAIL="f.guendel@gmai.com"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # Set the credentials (modifies ~/.gitconfig)
@@ -177,3 +172,5 @@ Inspiration and code was taken from many sources, including:
   [https://github.com/mathiasbynens/dotfiles](https://github.com/mathiasbynens/dotfiles)
 * [@hukl](https://github.com/hukl) (hukl)
   [https://github.com/hukl/dotfiles](https://github.com/hukl/dotfiles)
+* [@klaemo](https://github.com/klaemo) (klaemo)
+  [https://github.com/klaemo/dotfiles](https://github.com/klaemo/dotfiles)

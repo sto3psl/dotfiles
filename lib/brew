@@ -22,7 +22,6 @@ run_brew() {
         local -a desired_formulae=(
             'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'git'
-            'ack'
             'bash'
             'bash-completion'
             'homebrew/dupes/grep'
@@ -30,8 +29,6 @@ run_brew() {
             'homebrew/dupes/openssh'
             'ffmpeg'
             'graphicsmagick'
-            'node'
-            'tree'
             'wget'
             'ansible'
             'ssh-copy-id'
@@ -62,6 +59,8 @@ run_brew() {
 
         # install Github Hub
         brew install hub
+
+        brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
 
         # Remove outdated versions from the Cellar
         brew cleanup

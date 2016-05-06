@@ -6,23 +6,25 @@ cat <<EOT
 Additional software to install from AppStore
 
   1Password
-  Divvy
-  LimeChat
+  Airmail
+  DaisyDisk
+  iStat Mini
   Pixelmator
   Slack
-  Timing
   Twitter
   Unarchiver
+  Xcode
+  Numbers
+  Keynote
+  Pages
 
 Addition non-AppStore software (run "dotfiles -o" to open in browser)
 
   Adobe Source Code Pro - https://github.com/adobe-fonts/source-code-pro/releases
-  BitTorrent Sync - https://www.getsync.com/intl/de/
-  Docker Toolbox - https://www.docker.com/docker-toolbox
-  Dropbox - https://www.dropbox.com/install
+  Google Chrome - https://www.google.com/intl/de/chrome/browser/
   ImageOptim - https://imageoptim.com
+  Owncloud - https://owncloud.org/install/
   SublimeText 3 - http://www.sublimetext.com/3
-  XCA - http://sourceforge.net/projects/xca/
 
 EOT
 

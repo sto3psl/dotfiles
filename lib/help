@@ -3,7 +3,7 @@
 run_help() {
 
 cat <<EOT
-OS X dotfiles - Clemens Stolle
+OS X dotfiles - Fabian Gündel
 
 Usage: $(basename "$0") [options]
 
@@ -14,9 +14,9 @@ Options:
     --no-packages   Suppress package updates
     --no-sync       Suppress pulling from the remote repository
 
-Documentation can be found at https://github.com/klaemo/dotfiles/
+Documentation can be found at https://github.com/sto3psl/dotfiles/
 
-Copyright (c) Nicolas Gallagher, Clemens Stolle
+Copyright (c) Nicolas Gallagher, Fabian Gündel
 Licensed under the MIT license.
 EOT
 

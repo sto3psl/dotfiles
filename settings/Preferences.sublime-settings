@@ -1,6 +1,7 @@
 {
 	"auto_complete_commit_on_tab": true,
 	"bold_folder_labels": true,
+	"color_scheme": "Packages/Monokai Neue/Monokai-Neue.tmTheme",
 	"default_encoding": "UTF-8",
 	"default_line_ending": "unix",
 	"draw_white_space": "selection",
@@ -13,8 +14,12 @@
 		"._*",
 		"Thumbs.db",
 		".Spotlight-V100",
-		".Trashes"
+		".Trashes",
+		"android*",
+		"apple-touch*",
+		"favicon-*"
 	],
+	"findreplace_small": true,
 	"folder_exclude_patterns":
 	[
 		".git",
@@ -22,20 +27,24 @@
 		"bower_components"
 	],
 	"font_face": "Source Code Pro",
+	"font_options": "subpixel_antialias",
 	"font_size": 14.0,
 	"highlight_modified_tabs": true,
 	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"match_brackets": true,
 	"match_brackets_angle": true,
+	"predawn_tabs_small": true,
 	"remember_open_files": false,
-	"rulers":
-	[
-		100
-	],
+	"scroll_past_end": true,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"tab_size": 2,
-	"translate_tabs_to_spaces": false,
+	"theme": "predawn-DEV.sublime-theme",
+	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"word_wrap": false
 }
