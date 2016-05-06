@@ -144,8 +144,8 @@ chflags nohidden ~/Library
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
-# Dock: position the Dock on the left
-#defaults write com.apple.dock orientation left
+# Dock: position the Dock on the bottom
+defaults write com.apple.dock orientation bottom
 
 # Set the icon size of Dock items to 36 pixels
 defaults write com.apple.dock tilesize -int 36
