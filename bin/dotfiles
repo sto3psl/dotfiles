@@ -26,6 +26,7 @@ source ./lib/download
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
+source ./lib/npm
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -42,6 +43,11 @@ fi
 # List additional software to install
 if [[ "$1" == "-o" || "$1" == "--open" ]]; then
     run_download
+    exit
+fi
+
+if [[ "$1" == "-n" || "$1" == "--npm" ]]; then
+    run_npm
     exit
 fi
 
@@ -165,3 +171,7 @@ if is_confirmed; then
 else
     printf "Skipped OS X settings update.\n"
 fi
+
+printf "To install the latest node version run dotfiles -n"
+
+reload
