@@ -26,6 +26,7 @@ source ./lib/download
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
+source ./lib/composer
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -113,6 +114,8 @@ else
     run_brew
     # Install Node packages
     run_node
+    # Install Composer
+    run_composer
 
     # Show list of additional AppStore Software
     run_additional
