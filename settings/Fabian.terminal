@@ -148,11 +148,11 @@
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGFRZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
-	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPECww
-	LjExMzcyNTQ5MDIgMC4xMTM3MjU0OTAyIDAuMTEzNzI1NDkwMiAwLjg1ABABgALSEBES
-	E1okY2xhc3NuYW1lWCRjbGFzc2VzV05TQ29sb3KiEhRYTlNPYmplY3RfEA9OU0tleWVk
-	QXJjaGl2ZXLRFxhUcm9vdIABCBEaIy0yNztBSE5bYpGTlZqlrra5wtTX3AAAAAAAAAEB
-	AAAAAAAAABkAAAAAAAAAAAAAAAAAAADe
+	AAGGoKMHCA9VJG51bGzTCQoLDA0OVU5TUkdCXE5TQ29sb3JTcGFjZVYkY2xhc3NPEDQw
+	LjExMzcyNTQ5MDIgMC4xMTM3MjU0OTAyIDAuMTEzNzI1NDkwMiAwLjk1NjI4NjMzNzIA
+	EAGAAtIQERITWiRjbGFzc25hbWVYJGNsYXNzZXNXTlNDb2xvcqISFFhOU09iamVjdF8Q
+	D05TS2V5ZWRBcmNoaXZlctEXGFRyb290gAEIERojLTI3O0FITltimZudoq22vsHK3N/k
+	AAAAAAAAAQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAOY=
 	</data>
 	<key>Bell</key>
 	<true/>
@@ -201,11 +201,25 @@
 	</data>
 	<key>ShouldLimitScrollback</key>
 	<integer>0</integer>
-	<key>ShowActiveProcessInTitle</key>
+	<key>ShowActiveProcessArgumentsInTitle</key>
 	<true/>
+	<key>ShowActiveProcessInTabTitle</key>
+	<false/>
+	<key>ShowActiveProcessInTitle</key>
+	<false/>
 	<key>ShowCommandKeyInTitle</key>
 	<false/>
+	<key>ShowComponentsWhenTabHasCustomTitle</key>
+	<false/>
 	<key>ShowDimensionsInTitle</key>
+	<false/>
+	<key>ShowRepresentedURLInTabTitle</key>
+	<true/>
+	<key>ShowRepresentedURLInTitle</key>
+	<false/>
+	<key>ShowRepresentedURLPathInTabTitle</key>
+	<true/>
+	<key>ShowRepresentedURLPathInTitle</key>
 	<false/>
 	<key>ShowShellCommandInTitle</key>
 	<false/>
@@ -286,7 +300,7 @@
 	ZmZmAQGDzbVMPwGG
 	</data>
 	<key>columnCount</key>
-	<integer>80</integer>
+	<integer>70</integer>
 	<key>cyanColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
@@ -408,7 +422,7 @@
 	ZmZmAYPn5uY+g/79fT8Bhg==
 	</data>
 	<key>name</key>
-	<string>fabian</string>
+	<string>Fabian</string>
 	<key>redColour</key>
 	<data>
 	BAtzdHJlYW10eXBlZIHoA4QBQISEhAdOU0NvbG9yAISECE5TT2JqZWN0AIWEAWMBhARm
