@@ -16,7 +16,7 @@ run_node() {
 	# update npm
 	npm install -g npm
 
-	npm i -g standard browser-sync http-server json
+	npm i -g standard browser-sync http-server tldr create-module
 
 	# install npm tab completion
 	npm completion > /usr/local/etc/bash_completion.d/npm
