@@ -74,12 +74,38 @@ Homebrew formulae:
 Also newer versions of `grep`, `screen` and `openssh`.
 `hub` (if it exists) will be aliased as `git`.
 
+Homebrew Cask formulae:
+
+* [qlcolorcode](https://github.com/sindresorhus/quick-look-plugins)
+* [qlstephen](https://github.com/sindresorhus/quick-look-plugins)
+* [qlmarkdown](https://github.com/sindresorhus/quick-look-plugins)
+* [quicklook-json](https://github.com/sindresorhus/quick-look-plugins)
+* [qlprettypatch](https://github.com/sindresorhus/quick-look-plugins)
+* [quicklook-csv](https://github.com/sindresorhus/quick-look-plugins)
+* [betterzipql](https://github.com/sindresorhus/quick-look-plugins)
+* [qlimagesize](https://github.com/sindresorhus/quick-look-plugins)
+* [webpquicklook](https://github.com/sindresorhus/quick-look-plugins)
+* [suspicious-package](https://github.com/sindresorhus/quick-look-plugins)
+* [filezilla](https://filezilla-project.org)
+* [google-chrome](https://www.google.de/chrome/browser/desktop/)
+* [firefox](https://www.mozilla.org/de/firefox/new/)
+* [opera](http://www.opera.com/de)
+* [handbrake](https://handbrake.fr)
+* [imageoptim](https://imageoptim.com/mac)
+* [mamp](https://www.mamp.info/de/)
+* [owncloud](https://owncloud.org)
+* [sourcetree](https://www.sourcetreeapp.com)
+* [spectacle](https://www.spectacleapp.com)
+* [sublime-text](https://www.sublimetext.com)
+* [vlc](http://www.videolan.org/vlc/)
+
 Node packages (globally):
 
 * [standard](http://standardjs.com)
 * [browser-sync](https://www.npmjs.com/package/browser-sync)
 * [http-server](https://www.npmjs.com/package/http-server)
-* [json](http://trentm.com/json)
+* [tldr](https://www.npmjs.com/package/tldr)
+* [create-module](https://www.npmjs.com/package/create-module)
 
 It also installs the latest `node` with nvm and sets it as the default `node`.
 
