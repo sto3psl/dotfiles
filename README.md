@@ -169,7 +169,7 @@ export PATH
 # Not under version control to prevent people from
 # accidentally committing with your details
 GIT_AUTHOR_NAME="Fabian Gündel"
-GIT_AUTHOR_EMAIL="f.guendel@gmai.com"
+GIT_AUTHOR_EMAIL="f.guendel@gmail.com"
 GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
 GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
 # Set the credentials (modifies ~/.gitconfig)
