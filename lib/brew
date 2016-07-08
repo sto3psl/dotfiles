@@ -31,6 +31,7 @@ run_brew() {
             'graphicsmagick'
             'wget'
             'ssh-copy-id'
+            'hub'
         )
 
         for index in ${!desired_formulae[*]}
@@ -56,13 +57,48 @@ run_brew() {
         # install separately from the main formulae list to fix gh-19
         brew install https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb
 
-        # install Github Hub
-        brew install hub
+        local cask_list
+        local -a casks=(
+            'qlcolorcode'
+            'qlstephen'
+            'qlmarkdown'
+            'quicklook-json'
+            'qlprettypatch'
+            'quicklook-csv'
+            'betterzipql'
+            'qlimagesize'
+            'webpquicklook'
+            'suspicious-package'
+            'filezilla'
+            'google-chrome'
+            'firefox'
+            'opera'
+            'handbrake'
+            'imageoptim'
+            'mamp'
+            'owncloud'
+            'sourcetree'
+            'spectacle'
+            'sublime-text'
+            'vlc'
+        )
 
-        brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+        cask_list=$( printf "%s " "${casks[@]}" )
+
+        # Ask before installing software via brew-cask
+        printf "Packages: %s.\n" "$cask_list"
+        seek_confirmation "Do you want to install these packages via brew-cask?"
+
+        if is_confirmed; then
+            brew cask install $cask_list
+            e_success "Software installed"
+        else
+            printf "Skipped installing packages.\n"
+        fi
 
         # Remove outdated versions from the Cellar
         brew cleanup
+        brew cask cleanup
     else
         printf "\n"
         e_error "Error: Homebrew not found."

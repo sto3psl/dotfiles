@@ -8,7 +8,6 @@ Additional software to install from AppStore
   1Password
   Airmail
   DaisyDisk
-  iStat Mini
   Pixelmator
   Slack
   Twitter
@@ -17,14 +16,6 @@ Additional software to install from AppStore
   Numbers
   Keynote
   Pages
-
-Addition non-AppStore software (run "dotfiles -o" to open in browser)
-
-  Adobe Source Code Pro - https://github.com/adobe-fonts/source-code-pro/releases
-  Google Chrome - https://www.google.com/intl/de/chrome/browser/
-  ImageOptim - https://imageoptim.com
-  Owncloud - https://owncloud.org/install/
-  SublimeText 3 - http://www.sublimetext.com/3
 
 EOT
 
