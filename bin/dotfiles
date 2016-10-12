@@ -22,7 +22,6 @@ cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
 source ./lib/additional
-source ./lib/download
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
