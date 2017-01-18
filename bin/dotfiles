@@ -21,11 +21,9 @@ fi
 cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
-source ./lib/additional
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
-source ./lib/composer
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
