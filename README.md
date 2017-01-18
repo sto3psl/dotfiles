@@ -7,7 +7,7 @@ My OS X dotfiles. Originally forked from [klaemo/dotfiles](https://github.com/kl
 The installation step may overwrite existing dotfiles in your HOME directory.
 
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/sto3psl/dotfiles/master/bin/dotfiles)"
+$ git clone https://github.com/sto3psl/dotfiles.git .dotfiles && cd .dotfiles && ./bin/dotfiles
 ```
 
 N.B. If you wish to fork this project and maintain your own dotfiles, you must

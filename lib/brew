@@ -32,6 +32,9 @@ run_brew() {
             'wget'
             'ssh-copy-id'
             'hub'
+            'watchman'
+            'httpie'
+            'tree'
         )
 
         for index in ${!desired_formulae[*]}
@@ -59,15 +62,13 @@ run_brew() {
 
         local cask_list
         local -a casks=(
-            'adobe-creative-cloud'
             'betterzipql'
             'filezilla'
-            'firefox'
             'google-chrome'
+            'github-desktop'
             'handbrake'
             'imageoptim'
-            'mamp'
-            'opera'
+            'iterm2'
             'owncloud'
             'qlcolorcode'
             'qlimagesize'
@@ -77,11 +78,12 @@ run_brew() {
             'quicklook-csv'
             'quicklook-json'
             'skype'
-            'sourcetree'
+            'slack'
             'spectacle'
             'sublime-text'
             'suspicious-package'
             'transmission'
+            'visual-studio-code'
             'vlc'
             'webpquicklook'
         )

@@ -24,6 +24,7 @@ source ./lib/help
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
+source ./lib/zsh
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -105,8 +106,8 @@ else
     run_brew
     # Install Node packages
     run_node
-    # Install Composer
-    run_composer
+
+    run_zsh
 
     # Show list of additional AppStore Software
     run_additional
@@ -128,6 +129,7 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory.
     link ".bashrc"          ".bashrc"
+    link ".zshrc"           ".zshrc"
     link ".aliases"         ".aliases"
     link ".bash_profile"    ".bash_profile"
     link ".bash_prompt"     ".bash_prompt"
