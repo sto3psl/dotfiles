@@ -106,13 +106,8 @@ else
     run_brew
     # Install Node packages
     run_node
-
+    # Install zsh and make it the default shell
     run_zsh
-
-    # Show list of additional AppStore Software
-    run_additional
-
-    printf "\nRun 'dotfiles -d' to download additional non-AppStore software.\n"
 fi
 
 link() {
