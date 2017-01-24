@@ -6,6 +6,9 @@ alias .....="cd ../../../.."
 alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 
+alias dotfiles="~/.dotfiles/bin/dotfiles"
+alias macOSdefaults="~/.dotfiles/bin/macOS"
+
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
