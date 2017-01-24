@@ -1,5 +1,7 @@
 # Fabians Dotfiles
 
+![iTerm](./terminal.png)
+
 My macOS dotfiles. Originally forked from [klaemo/dotfiles](https://github.com/klaemo/dotfiles).
 
 ## How to install
