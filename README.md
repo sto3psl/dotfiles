@@ -82,6 +82,7 @@ Homebrew Cask formulae:
 * [handbrake](https://handbrake.fr)
 * [imageoptim](https://imageoptim.com/mac)
 * [iterm2](https://www.iterm2.com)
+* [private-internet-access](https://deu.privateinternetaccess.com/pages/downloads)
 * [qlcolorcode](https://github.com/sindresorhus/quick-look-plugins)
 * [qlimagesize](https://github.com/sindresorhus/quick-look-plugins)
 * [qlmarkdown](https://github.com/sindresorhus/quick-look-plugins)

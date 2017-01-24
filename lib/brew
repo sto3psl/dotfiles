@@ -70,6 +70,7 @@ run_brew() {
             'handbrake'
             'imageoptim'
             'iterm2'
+            'private-internet-access'
             'qlcolorcode'
             'qlimagesize'
             'qlmarkdown'
