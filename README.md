@@ -1,13 +1,13 @@
 # Fabians Dotfiles
 
-My OS X dotfiles. Originally forked from [klaemo/dotfiles](https://github.com/klaemo/dotfiles).
+My macOS dotfiles. Originally forked from [klaemo/dotfiles](https://github.com/klaemo/dotfiles).
 
 ## How to install
 
 The installation step may overwrite existing dotfiles in your HOME directory.
 
 ```bash
-$ bash -c "$(curl -fsSL raw.github.com/sto3psl/dotfiles/master/bin/dotfiles)"
+$ git clone https://github.com/sto3psl/dotfiles.git .dotfiles && cd .dotfiles && ./bin/dotfiles
 ```
 
 N.B. If you wish to fork this project and maintain your own dotfiles, you must
@@ -37,14 +37,6 @@ Options:
         <td>Help</td>
     </tr>
     <tr>
-        <td><code>-l</code>, <code>--list</code></td>
-        <td>Print a list of third-party apps</td>
-    </tr>
-    <tr>
-        <td><code>-o</code>, <code>--open</code></td>
-        <td>Open websites of third-party apps in the browser</td>
-    </tr>
-    <tr>
         <td><code>--no-packages</code></td>
         <td>Suppress package updates</td>
     </tr>
@@ -61,64 +53,60 @@ Options:
 
 Homebrew formulae:
 
-* GNU core utilities
-* [git](http://git-scm.com/)
 * bash (latest version)
 * [bash-completion](http://bash-completion.alioth.debian.org/)
+* GNU core utilities
 * [ffmpeg](http://ffmpeg.org/)
+* [git](http://git-scm.com/)
 * [graphicsmagick](http://www.graphicsmagick.org/)
-* [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
-* [wget](http://www.gnu.org/software/wget/)
+* [httpie](https://httpie.org)
 * [hub](https://github.com/github/hub)
+* [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
+* [screenfetch](https://github.com/KittyKatt/screenFetch)
+* ssh-copy-id
+* [tree](http://mama.indstate.edu/users/ice/tree/)
+* [watchman](https://facebook.github.io/watchman/)
+* [wget](http://www.gnu.org/software/wget/)
 
 Also newer versions of `grep`, `screen` and `openssh`.
 `hub` (if it exists) will be aliased as `git`.
 
 Homebrew Cask formulae:
 
-* [qlcolorcode](https://github.com/sindresorhus/quick-look-plugins)
-* [qlstephen](https://github.com/sindresorhus/quick-look-plugins)
-* [qlmarkdown](https://github.com/sindresorhus/quick-look-plugins)
-* [quicklook-json](https://github.com/sindresorhus/quick-look-plugins)
-* [qlprettypatch](https://github.com/sindresorhus/quick-look-plugins)
-* [quicklook-csv](https://github.com/sindresorhus/quick-look-plugins)
 * [betterzipql](https://github.com/sindresorhus/quick-look-plugins)
-* [qlimagesize](https://github.com/sindresorhus/quick-look-plugins)
-* [webpquicklook](https://github.com/sindresorhus/quick-look-plugins)
-* [suspicious-package](https://github.com/sindresorhus/quick-look-plugins)
-* [filezilla](https://filezilla-project.org)
+* [cyberduck](https://cyberduck.io)
+* [github-desktop](https://desktop.github.com)
 * [google-chrome](https://www.google.de/chrome/browser/desktop/)
-* [firefox](https://www.mozilla.org/de/firefox/new/)
-* [opera](http://www.opera.com/de)
 * [handbrake](https://handbrake.fr)
 * [imageoptim](https://imageoptim.com/mac)
-* [mamp](https://www.mamp.info/de/)
-* [owncloud](https://owncloud.org)
-* [sourcetree](https://www.sourcetreeapp.com)
+* [iterm2](https://www.iterm2.com)
+* [qlcolorcode](https://github.com/sindresorhus/quick-look-plugins)
+* [qlimagesize](https://github.com/sindresorhus/quick-look-plugins)
+* [qlmarkdown](https://github.com/sindresorhus/quick-look-plugins)
+* [qlprettypatch](https://github.com/sindresorhus/quick-look-plugins)
+* [qlstephen](https://github.com/sindresorhus/quick-look-plugins)
+* [quicklook-csv](https://github.com/sindresorhus/quick-look-plugins)
+* [quicklook-json](https://github.com/sindresorhus/quick-look-plugins)
+* [skype](https://www.skype.com/de/)
+* [slack](https://slack.com)
 * [spectacle](https://www.spectacleapp.com)
 * [sublime-text](https://www.sublimetext.com)
+* [suspicious-package](https://github.com/sindresorhus/quick-look-plugins)
+* [transmission](https://transmissionbt.com)
+* [visual-studio-code](https://code.visualstudio.com)
 * [vlc](http://www.videolan.org/vlc/)
-
-Node packages (globally):
-
-* [standard](http://standardjs.com)
-* [browser-sync](https://www.npmjs.com/package/browser-sync)
-* [http-server](https://www.npmjs.com/package/http-server)
-* [tldr](https://www.npmjs.com/package/tldr)
-* [create-module](https://www.npmjs.com/package/create-module)
+* [webpquicklook](https://github.com/sindresorhus/quick-look-plugins)
 
 It also installs the latest `node` with nvm and sets it as the default `node`.
 
-### Custom OS X defaults
+### Custom macOS defaults
 
-Custom OS X settings can be applied during the `dotfiles` process. They can
+Custom macOS settings can be applied during the `dotfiles` process. They can
 also be applied independently by running the following command:
 
 ```bash
-$ osxdefaults
+$ macOSdefaults
 ```
-
-This also installs custom Sublime Text settings.
 
 ### Custom bash prompt
 
@@ -150,40 +138,6 @@ following way:
 </table>
 
 Further details are in the `bash_prompt` file.
-
-### Local/private Bash configuration
-
-Any private and custom Bash commands and configuration should be placed in a
-`~/.extra` file. This file will not be under version control or
-committed to a public repository. If `~/.extra` exists, it will be
-sourced for inclusion in `bash_profile`.
-
-Here is an example `~/.extra`:
-
-```bash
-# PATH exports
-PATH=$PATH:~/.gem/ruby/1.8/bin
-export PATH
-
-# Git credentials
-# Not under version control to prevent people from
-# accidentally committing with your details
-GIT_AUTHOR_NAME="Fabian Gündel"
-GIT_AUTHOR_EMAIL="f.guendel@gmail.com"
-GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
-GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
-# Set the credentials (modifies ~/.gitconfig)
-git config --global user.name "$GIT_AUTHOR_NAME"
-git config --global user.email "$GIT_AUTHOR_EMAIL"
-
-# Aliases
-alias code="cd ~/Code"
-```
-
-N.B. Because the `git/gitconfig` file is copied to `~/.gitconfig`, any private
-git configuration specified in `~/.extra` will not be committed to
-your dotfiles repository.
-
 
 ## Acknowledgements
 

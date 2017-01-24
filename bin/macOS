@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 # Ask for the administrator password upfront
 sudo -v
 
@@ -62,6 +66,9 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -250,21 +257,14 @@ sudo mdutil -i on / > /dev/null
 sudo mdutil -E / > /dev/null
 
 ###############################################################################
-# Terminal                                                         #
+# Terminal and iTerm                                                          #
 ###############################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
 
-# Use a modified version of the Solarized Dark theme by default in Terminal.app
-TERM_PROFILE='Fabian';
-CURRENT_PROFILE="$(defaults read com.apple.terminal 'Default Window Settings')";
-if [ "${CURRENT_PROFILE}" != "${TERM_PROFILE}" ]; then
-	open "${HOME}/.dotfiles/settings/${TERM_PROFILE}.terminal";
-	sleep 1; # Wait a bit to make sure the theme is loaded
-	defaults write com.apple.terminal 'Default Window Settings' -string "${TERM_PROFILE}";
-	defaults write com.apple.terminal 'Startup Window Settings' -string "${TERM_PROFILE}";
-fi;
+# Don’t display the annoying prompt when quitting iTerm
+defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
 ###############################################################################
 # Time Machine                                                                #
@@ -304,19 +304,28 @@ defaults write com.apple.TextEdit PlainTextEncoding -int 4
 defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 
 ###############################################################################
-# Google Chrome & Google Chrome Canary                                        #
+# Photos                                                                      #
 ###############################################################################
 
-# Disable the all too sensitive backswipe
-# defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-# defaults write com.google.Chrome.canary AppleEnableSwipeNavigateWithScrolls -bool false
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
-# Sublime Text                                                                #
+# SSD-specific tweaks                                                         #
 ###############################################################################
 
-# Install Sublime Text settings
-cp -r ~/.dotfiles/settings/Preferences.sublime-settings ~/Library/Application\ Support/Sublime\ Text*/Packages/User/Preferences.sublime-settings 2> /dev/null
+# Disable hibernation (speeds up entering sleep mode)
+sudo pmset -a hibernatemode 0
+
+# Remove the sleep image file to save disk space
+sudo rm /private/var/vm/sleepimage
+# Create a zero-byte file instead…
+sudo touch /private/var/vm/sleepimage
+# …and make sure it can’t be rewritten
+sudo chflags uchg /private/var/vm/sleepimage
+
+# Disable the sudden motion sensor as it’s not useful for SSDs
+sudo pmset -a sms 0
 
 ###############################################################################
 # Kill affected applications                                                  #

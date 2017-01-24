@@ -21,11 +21,10 @@ fi
 cd ${DOTFILES_DIRECTORY}
 
 source ./lib/help
-source ./lib/additional
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
-source ./lib/composer
+source ./lib/zsh
 
 # Help text
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
@@ -107,13 +106,8 @@ else
     run_brew
     # Install Node packages
     run_node
-    # Install Composer
-    run_composer
-
-    # Show list of additional AppStore Software
-    run_additional
-
-    printf "\nRun 'dotfiles -d' to download additional non-AppStore software.\n"
+    # Install zsh and make it the default shell
+    run_zsh
 fi
 
 link() {
@@ -130,6 +124,7 @@ mirrorfiles() {
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory.
     link ".bashrc"          ".bashrc"
+    link ".zshrc"           ".zshrc"
     link ".aliases"         ".aliases"
     link ".bash_profile"    ".bash_profile"
     link ".bash_prompt"     ".bash_prompt"
@@ -161,7 +156,7 @@ fi
 seek_confirmation "Warning: This step may modify your OS X system defaults."
 
 if is_confirmed; then
-    bash ./bin/osxdefaults
+    bash ./bin/macOS
     e_success "OS X settings updated! You may need to restart."
 else
     printf "Skipped OS X settings update.\n"

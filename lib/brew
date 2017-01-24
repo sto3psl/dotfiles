@@ -20,18 +20,22 @@ run_brew() {
         local list_formulae
         local -a missing_formulae
         local -a desired_formulae=(
-            'coreutils' # GNU core utilities (those that come with OS X are outdated)
-            'git'
-            'bash'
             'bash-completion'
-            'homebrew/dupes/grep'
-            'homebrew/dupes/screen'
-            'homebrew/dupes/openssh'
+            'bash'
+            'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ffmpeg'
+            'git'
             'graphicsmagick'
-            'wget'
-            'ssh-copy-id'
+            'homebrew/dupes/grep'
+            'homebrew/dupes/openssh'
+            'homebrew/dupes/screen'
+            'httpie'
             'hub'
+            'screenfetch'
+            'ssh-copy-id'
+            'tree'
+            'watchman'
+            'wget'
         )
 
         for index in ${!desired_formulae[*]}
@@ -59,29 +63,27 @@ run_brew() {
 
         local cask_list
         local -a casks=(
-            'adobe-creative-cloud'
             'betterzipql'
-            'filezilla'
-            'firefox'
+            'cyberduck'
+            'github-desktop'
             'google-chrome'
             'handbrake'
             'imageoptim'
-            'mamp'
-            'opera'
-            'owncloud'
+            'iterm2'
             'qlcolorcode'
             'qlimagesize'
             'qlmarkdown'
-            'qlstephen'
             'qlprettypatch'
+            'qlstephen'
             'quicklook-csv'
             'quicklook-json'
             'skype'
-            'sourcetree'
+            'slack'
             'spectacle'
             'sublime-text'
             'suspicious-package'
             'transmission'
+            'visual-studio-code'
             'vlc'
             'webpquicklook'
         )
