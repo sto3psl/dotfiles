@@ -57,14 +57,13 @@ Homebrew formulae:
 
 * bash (latest version)
 * [bash-completion](http://bash-completion.alioth.debian.org/)
-* GNU core utilities
 * [ffmpeg](http://ffmpeg.org/)
 * [git](http://git-scm.com/)
 * [graphicsmagick](http://www.graphicsmagick.org/)
 * [httpie](https://httpie.org)
 * [hub](https://github.com/github/hub)
 * [rsync](https://rsync.samba.org/) (latest version, rather than the out-dated OS X installation)
-* [screenfetch](https://github.com/KittyKatt/screenFetch)
+* [neofetch](https://github.com/dylanaraps/neofetch)
 * ssh-copy-id
 * [tree](http://mama.indstate.edu/users/ice/tree/)
 * [watchman](https://facebook.github.io/watchman/)

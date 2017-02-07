@@ -22,7 +22,6 @@ run_brew() {
         local -a desired_formulae=(
             'bash-completion'
             'bash'
-            'coreutils' # GNU core utilities (those that come with OS X are outdated)
             'ffmpeg'
             'git'
             'graphicsmagick'
@@ -31,7 +30,7 @@ run_brew() {
             'homebrew/dupes/screen'
             'httpie'
             'hub'
-            'screenfetch'
+            'neofetch'
             'ssh-copy-id'
             'tree'
             'watchman'
@@ -57,9 +56,11 @@ run_brew() {
             [[ $? ]] && e_success "Done"
         fi
 
-        # use latest rsync rather than out-dated OS X rsync
-        # install separately from the main formulae list to fix gh-19
-        brew install https://raw.github.com/Homebrew/homebrew-dupes/master/rsync.rb
+        # Switch to using brew-installed bash as default shell
+        if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+            echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
+            chsh -s /usr/local/bin/bash
+        fi
 
         local cask_list
         local -a casks=(
