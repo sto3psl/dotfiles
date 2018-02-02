@@ -10,5 +10,6 @@
         "**/build": true
     }
 ,
-"vsicons.projectDetection.disableDetect": true
+"vsicons.projectDetection.disableDetect": true,
+"workbench.colorTheme": "Ayu Mirage"
 }
