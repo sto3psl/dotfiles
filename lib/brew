@@ -1,0 +1,116 @@
+#!/bin/bash
+
+# Install command-line tools using Homebrew.
+
+run_brew() {
+
+    # Check for Homebrew
+    if type_exists 'brew'; then
+        e_header "Updating Homebrew..."
+        # Use the latest version of Homebrew
+        brew update
+        [[ $? ]] && e_success "Done"
+
+        e_header "Updating any existing Homebrew formulae..."
+        # Upgrade any already-installed formulae
+        brew upgrade
+        [[ $? ]] && e_success "Done"
+
+        e_header "Checking status of desired Homebrew formulae..."
+        local list_formulae
+        local -a missing_formulae
+        local -a desired_formulae=(
+            'bash-completion'
+            'bash'
+            'ffmpeg'
+            'git'
+            'graphicsmagick'
+            'homebrew/dupes/grep'
+            'homebrew/dupes/openssh'
+            'homebrew/dupes/screen'
+            'httpie'
+            'hub'
+            'neofetch'
+            'ssh-copy-id'
+            'tree'
+            'watchman'
+            'wget'
+        )
+
+        for index in ${!desired_formulae[*]}
+        do
+            if ! formula_exists ${desired_formulae[$index]}; then
+                # Store the name (and options) of every missing formula
+                missing_formulae=("${missing_formulae[@]}" "${desired_formulae[$index]}")
+            fi
+        done
+
+        if [[ "$missing_formulae" ]]; then
+            # Convert the array of missing formula into a list of space-separate strings
+            list_formulae=$( printf "%s " "${missing_formulae[@]}" )
+
+            e_header "Installing missing Homebrew formulae..."
+            # Install all missing formulae
+            brew install $list_formulae
+
+            [[ $? ]] && e_success "Done"
+        fi
+
+        # Switch to using brew-installed bash as default shell
+        if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+            echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
+            chsh -s /usr/local/bin/bash
+        fi
+
+        local cask_list
+        local -a casks=(
+            'betterzipql'
+            'cyberduck'
+            'github-desktop'
+            'google-chrome'
+            'handbrake'
+            'imageoptim'
+            'iterm2'
+            'private-internet-access'
+            'qlcolorcode'
+            'qlimagesize'
+            'qlmarkdown'
+            'qlprettypatch'
+            'qlstephen'
+            'quicklook-csv'
+            'quicklook-json'
+            'skype'
+            'slack'
+            'spectacle'
+            'sublime-text'
+            'suspicious-package'
+            'transmission'
+            'visual-studio-code'
+            'vlc'
+            'webpquicklook'
+        )
+
+        cask_list=$( printf "%s " "${casks[@]}" )
+
+        # Ask before installing software via brew-cask
+        printf "Packages: %s.\n" "$cask_list"
+        seek_confirmation "Do you want to install these packages via brew-cask?"
+
+        if is_confirmed; then
+            brew cask install $cask_list
+            e_success "Software installed"
+        else
+            printf "Skipped installing packages.\n"
+        fi
+
+        # Remove outdated versions from the Cellar
+        brew cleanup
+        brew cask cleanup
+    else
+        printf "\n"
+        e_error "Error: Homebrew not found."
+        printf "Aborting...\n"
+        exit
+    fi
+
+}
