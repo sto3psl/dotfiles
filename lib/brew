@@ -64,9 +64,9 @@ run_brew() {
 
         local cask_list
         local -a casks=(
-            'betterzipql'
+            'betterzip'
             'cyberduck'
-            'github-desktop'
+            'github'
             'google-chrome'
             'handbrake'
             'imageoptim'
