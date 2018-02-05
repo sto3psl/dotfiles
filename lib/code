@@ -4,17 +4,27 @@
 
 run_code() {
   local -a extensions=(
-    'teabyii.ayu'
-    'dzannotti.vscode-babel-coloring'
-    'xabikos.JavaScriptSnippets'
-    'chenxsan.vscode-standard-format'
+    'EditorConfig.EditorConfig'
+    'Orta.vscode-jest'
+    'Zignd.html-css-class-completion'
+    'bierner.color-info'
     'chenxsan.vscode-standardjs'
     'christian-kohler.npm-intellisense'
     'christian-kohler.path-intellisense'
-    'TimonVS.ReactSnippetsStandard'
-    'shinnn.stylelint'
-    'ms-vscode.sublime-keybindings'
+    'clinyong.vscode-css-modules'
+    'cpylua.language-postcss'
+    'dsznajder.es7-react-js-snippets'
+    'dzannotti.vscode-babel-coloring'
+    'esbenp.prettier-vscode'
+    'jock.svg'
+    'joelday.docthis'
     'robertohuertasm.vscode-icons'
+    'shinnn.stylelint'
+    'teabyii.ayu'
+    'waderyan.gitblame'
+    'whizkydee.material-palenight-theme'
+    'xabikos.JavaScriptSnippets'
+    'xabikos.ReactSnippets'
   )
 
   # Ask before installing extensions
