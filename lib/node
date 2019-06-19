@@ -13,9 +13,5 @@ run_node() {
 	# tell nvm to use latest node version
 	nvm use node
 
-	# install yarn
-	curl -o- -L https://yarnpkg.com/install.sh | bash
-
-	# install npm tab completion
-	npm completion > /usr/local/etc/bash_completion.d/npm
+	npm install -g npm gitignore serve tldr
 }

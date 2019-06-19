@@ -24,6 +24,7 @@ source ./lib/help
 source ./lib/utils
 source ./lib/brew
 source ./lib/node
+source ./lib/rust
 source ./lib/zsh
 source ./lib/code
 
@@ -107,8 +108,8 @@ else
     run_brew
     # Install Node packages
     run_node
-    # Install zsh and make it the default shell
-    run_zsh
+    # Install Rust
+    run_rust
     # Install vscode extensions
     run_code
 fi
@@ -126,17 +127,8 @@ mirrorfiles() {
 
     # Create the necessary symbolic links between the `.dotfiles` and `HOME`
     # directory.
-    link ".bashrc"          ".bashrc"
     link ".zshrc"           ".zshrc"
     link ".aliases"         ".aliases"
-    link ".bash_profile"    ".bash_profile"
-    link ".bash_prompt"     ".bash_prompt"
-    link ".bash_paths"      ".bash_paths"
-    link ".exports"         ".exports"
-    link ".functions"       ".functions"
-    link ".curlrc"          ".curlrc"
-    link ".wgetrc"          ".wgetrc"
-    link ".inputrc"         ".inputrc"
     link ".gitattributes"   ".gitattributes"
     link ".gitignore"       ".gitignore"
     link ".hushlogin"       ".hushlogin"

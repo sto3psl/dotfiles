@@ -1,0 +1,6 @@
+#!/bin/bash
+
+run_rust() {
+	# install rust
+  curl https://sh.rustup.rs -sSf | sh
+}

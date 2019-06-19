@@ -20,21 +20,18 @@ run_brew() {
         local list_formulae
         local -a missing_formulae
         local -a desired_formulae=(
-            'bash-completion'
-            'bash'
+            'zsh-completions'
+            'zsh-history-substring-search'
             'ffmpeg'
-            'git'
             'graphicsmagick'
-            'homebrew/dupes/grep'
-            'homebrew/dupes/openssh'
-            'homebrew/dupes/screen'
+            'grep'
+            'openssh'
+            'screen'
             'httpie'
             'hub'
             'neofetch'
             'ssh-copy-id'
             'tree'
-            'watchman'
-            'wget'
         )
 
         for index in ${!desired_formulae[*]}
@@ -56,12 +53,6 @@ run_brew() {
             [[ $? ]] && e_success "Done"
         fi
 
-        # Switch to using brew-installed bash as default shell
-        if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-            echo '/usr/local/bin/bash' | sudo tee -a /etc/shells
-            chsh -s /usr/local/bin/bash
-        fi
-
         local cask_list
         local -a casks=(
             'betterzip'
@@ -79,14 +70,12 @@ run_brew() {
             'qlstephen'
             'quicklook-csv'
             'quicklook-json'
-            'skype'
             'slack'
             'spectacle'
             'sublime-text'
             'suspicious-package'
             'transmission'
             'visual-studio-code'
-            'vlc'
             'webpquicklook'
         )
 
