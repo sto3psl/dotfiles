@@ -82,10 +82,12 @@ bindkey '^[[B' history-substring-search-down
 # https://unix.stackexchange.com/a/273863
 #
 
-# Larger bash history. Allow 32³ entries; default is 500.
-export HISTSIZE='32768'
-export HISTFILESIZE="${HISTSIZE}"
-export HISTCONTROL='ignoreboth'
+# How many we can hold (?)
+export HISTSIZE=100000
+# History won't be saved without the following command
+export SAVEHIST=$HISTSIZE
+# This isn't set by default.
+export HISTFILE="$HOME/.zsh_history"
 
 # Do not display a line previously found.
 setopt HIST_FIND_NO_DUPS
@@ -98,12 +100,7 @@ setopt SHARE_HISTORY
 
 source ~/.aliases
 
-export NVM_DIR="/Users/fabian/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export PATH="$HOME/.yarn/bin:$PATH" # This loads yarn
-
-# Make sublime the default editor.
+# Make Visual Studio Code the default editor.
 export EDITOR='code -w'
 
 # Prefer US English and use UTF-8.
@@ -118,3 +115,5 @@ export MANPAGER='less -X';
 
 # Always enable colored `grep` output.
 export GREP_OPTIONS='--color=auto';
+
+export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).

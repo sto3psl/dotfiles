@@ -1,17 +1,11 @@
 #!/bin/bash
 
 run_node() {
-	# install nvm
-	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+	curl -L https://git.io/n-install | N_PREFIX="$HOME/.n" bash -s -- -y latest
 
-	# source nvm
-	. ~/.nvm/nvm.sh
+	export N_PREFIX="$HOME/.n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
-	# install latest node version
-	nvm install node
-
-	# tell nvm to use latest node version
-	nvm use node
-
-	npm install -g npm gitignore serve tldr
+	npm install -g pnpm 
+	
+	pnpm install -g gitignore serve tldr fkill-cli vercel pure-prompt
 }

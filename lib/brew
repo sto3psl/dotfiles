@@ -22,16 +22,18 @@ run_brew() {
         local -a desired_formulae=(
             'zsh-completions'
             'zsh-history-substring-search'
-            'ffmpeg'
+            'gh'
             'graphicsmagick'
             'grep'
             'openssh'
             'screen'
             'httpie'
-            'hub'
             'neofetch'
             'ssh-copy-id'
             'tree'
+            'bat'
+            'prettyping'
+            'htop'
         )
 
         for index in ${!desired_formulae[*]}
@@ -55,34 +57,31 @@ run_brew() {
 
         local cask_list
         local -a casks=(
+            'safari-technology-preview'
+            'firefox-developer-edition'
             'betterzip'
             'cyberduck'
             'github'
-            'google-chrome'
             'handbrake'
             'imageoptim'
             'iterm2'
-            'private-internet-access'
+            'qlstephen'
             'qlcolorcode'
             'qlimagesize'
             'qlmarkdown'
             'qlprettypatch'
             'qlstephen'
-            'quicklook-csv'
             'quicklook-json'
-            'slack'
-            'spectacle'
-            'sublime-text'
+            'rectangle'
             'suspicious-package'
-            'transmission'
             'visual-studio-code'
-            'webpquicklook'
+            'sublime-merge'
         )
 
         cask_list=$( printf "%s " "${casks[@]}" )
 
         # Ask before installing software via brew-cask
-        printf "Packages: %s.\n" "$cask_list"
+        printf "\nPackages: %s.\n" "$cask_list"
         seek_confirmation "Do you want to install these packages via brew-cask?"
 
         if is_confirmed; then
@@ -94,7 +93,6 @@ run_brew() {
 
         # Remove outdated versions from the Cellar
         brew cleanup
-        brew cask cleanup
     else
         printf "\n"
         e_error "Error: Homebrew not found."
