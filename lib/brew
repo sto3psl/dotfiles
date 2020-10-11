@@ -61,7 +61,6 @@ run_brew() {
             'firefox-developer-edition'
             'betterzip'
             'cyberduck'
-            'github'
             'handbrake'
             'imageoptim'
             'iterm2'
@@ -76,6 +75,7 @@ run_brew() {
             'suspicious-package'
             'visual-studio-code'
             'sublime-merge'
+            'gpg-suite'
         )
 
         cask_list=$( printf "%s " "${casks[@]}" )
